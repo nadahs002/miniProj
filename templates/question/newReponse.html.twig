@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une réponse{% endblock %}
+
+{% block body %}
+    <h1>Ajouter une réponse</h1>
+
+    {{ form_start(form) }}
+    {{ form_row(form.contenu) }}
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+    {{ form_end(form) }}
+
+    <hr>
+
+    <h2>Liste des réponses</h2>
+
+    {% if reponses is not empty %}
+        <ul>
+            {% for reponse in reponses %}
+                <li>{{ reponse.contenu }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucune réponse pour le moment.</p>
+    {% endif %}
+{% endblock %}

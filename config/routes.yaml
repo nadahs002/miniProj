@@ -5,3 +5,37 @@ controllers:
 kernel:
     resource: ../src/Kernel.php
     type: annotation
+
+
+# question_list:
+#     path: /api/questions
+#     resource: ../src/Controller/IndexController.php:home
+#     methods: [GET]
+
+
+# question_new:
+#     path: /api/questions/new
+#     resource: ../src/Controller/IndexController.php:new
+#     methods: [GET , POST]   
+
+
+# question_show:
+#     path: /api/questions/show/{id}
+#     resource: ../src/Controller/IndexController.php:show
+#     methods: [GET ]  
+
+# question_edit:
+#     path: /api/questions/edit/{id}
+#     resource: ../src/Controller/IndexController.php:edit
+#     methods: [GET , POST]
+
+
+# question_add:
+#     path: /api/questions/save
+#     resource: ../src/Controller/IndexController.php:save
+#     methods: [POST]    
+
+# delete_question:
+#     path: /question/delete/{id}
+#     controller: App\Controller\IndexController::delete
+#     methods: DELETE

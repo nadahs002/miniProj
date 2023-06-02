@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ question.titre }}{% endblock %}
+
+{% block body %}
+  <h1>{{ question.titre }}</h1>
+  <p>{{ question.contenu }}</p>
+  <hr>
+
+  <h2>Ajouter une réponse</h2>
+  <form action="{{ path('question_show', {'id': question.id}) }}" method="post">
+    {{ form_start(form) }}
+    {{ form_row(form.contenu) }}
+    <button type="submit" class="btn btn-primary">Répondre</button>
+    {{ form_end(form) }}
+  </form>
+
+  <h2>Liste des réponses</h2>
+  {% if question.reponses is empty %}
+    <p>Aucune réponse pour le moment.</p>
+  {% else %}
+    <ul>
+      {% for reponse in question.reponses %}
+        <li>{{ reponse.contenu }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <a href="/">Retour</a>
+{% endblock %}
